@@ -1,0 +1,33 @@
+<div class="control">
+  <div class="add-bulletin">
+    <app-ui-button
+      (click)="openEditWindow()"
+      [typeBtn]="'btn-success'"
+      [textBtn]="'Добавить'">
+    </app-ui-button>
+  </div>
+
+  <div class="filter-panel">
+    <div class="user">
+      <span>Пользователь</span>
+      <app-ui-select [options]="userList" (onSelect)="selectUser($event)"></app-ui-select>
+    </div>
+    <div class="start-date">
+      <span>От</span>
+      <app-ui-datepicker (onSelect)="selectDate($event, true)"></app-ui-datepicker>
+    </div>
+    <div class="end-date">
+      <span>До</span>
+      <app-ui-datepicker (onSelect)="selectDate($event, false)"></app-ui-datepicker>
+    </div>
+  </div>
+
+  <div class="search">
+    <app-ui-search class="ui-search" (onSearch)="search($event)"></app-ui-search>
+    <app-ui-select
+      (onSelect)="changeItemsPerPage($event)"
+      [options]="selectItemsPerPage">
+    </app-ui-select>
+  </div>
+</div>
+

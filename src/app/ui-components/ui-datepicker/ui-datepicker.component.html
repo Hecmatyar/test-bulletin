@@ -1,0 +1,17 @@
+<div class="picker">
+  <div class="form-group" [formGroup]="parentFormGroup">
+    <input
+      name="{{controlName}}"
+      formControlName="{{controlName}}"
+      type="text"
+      class="form-control"
+      #dp="bsDatepicker"
+      bsDatepicker
+      [bsValue]="bsValue"
+      [(ngModel)]="value"
+      (ngModelChange)="onChange($event)"
+    placeholder="   /   /  ">
+  </div>
+  <div class="calendar"></div>
+</div>
+

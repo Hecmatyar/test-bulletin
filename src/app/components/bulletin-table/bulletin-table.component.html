@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col" (click)="setSort('number')">Номер</th>
+    <th scope="col" (click)="setSort('createdUtc')">Создано</th>
+    <th scope="col" (click)="setSort('text')">Объявление</th>
+    <th scope="col" (click)="setSort('rating')">Рейтинг</th>
+    <th scope="col" (click)="setSort('userName')">Пользователь</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let bulletin of bulletins"
+      (click)="selectBulletin(bulletin)"
+      (dblclick)="editBulletin(bulletin)"
+      [ngClass]="{'table-primary': bulletin == selectedBulletin }">
+    <th scope="row">{{bulletin.number}}</th>
+    <td [dateFormat]="bulletin.createdUtc"></td>
+    <td>{{bulletin.text}}</td>
+    <td>{{bulletin.rating}}</td>
+    <td>{{bulletin.userName}}</td>
+  </tr>
+  </tbody>
+</table>

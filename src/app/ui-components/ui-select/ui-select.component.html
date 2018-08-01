@@ -1,0 +1,14 @@
+<div class="select" [formGroup]="parentFormGroup">
+  <select
+    class="form-control"
+    (change)="changeSelect($event.target.value)"
+    name="{{controlName}}"
+    formControlName="{{controlName}}">
+
+    <option value="0" *ngIf="haveAll">--All--</option>
+    <option *ngFor="let option of options; let i = index" value="{{option.id}}">
+      {{option.value}}
+    </option>
+
+  </select>
+</div>

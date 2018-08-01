@@ -1,0 +1,10 @@
+<div class="number" [formGroup]="parentFormGroup">
+  <input
+    class="form-control"
+    type="number"
+    [min]="minValue" [max]="maxValue"
+    name="{{controlName}}"
+    formControlName="{{controlName}}"
+    [(ngModel)]="value">
+</div>
+

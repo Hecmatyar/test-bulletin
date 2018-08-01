@@ -1,0 +1,71 @@
+<app-modal-window #modal [windowSize]="'modal-lg'" [title]="'Объявление'">
+  <form [formGroup]="bulletinForm">
+    <div class="form">
+      <span>Номер</span>
+      <app-ui-input
+        class="edit-number"
+        [parentFormGroup]="bulletinForm"
+        [controlName]="'number'">
+      </app-ui-input>
+
+      <span>Создано</span>
+      <app-ui-datepicker
+        class="edit-date"
+        [parentFormGroup]="bulletinForm"
+        [controlName]="'createdUtc'">
+      </app-ui-datepicker>
+
+      <span>Пользователь</span>
+      <app-ui-select
+        class="edit-user"
+        [options]="userList"
+        [parentFormGroup]="bulletinForm"
+        [controlName]="'userId'">
+      </app-ui-select>
+
+      <span>Текст</span>
+      <app-ui-textarea
+        class="edit-text"
+        [parentFormGroup]="bulletinForm"
+        [controlName]="'text'">
+      </app-ui-textarea>
+
+      <span>Рейтинг</span>
+      <div class="edit-rating">
+        <app-ui-number
+          class="rating"
+          [maxValue]="10"
+          [minValue]="1"
+          [parentFormGroup]="bulletinForm"
+          [controlName]="'rating'">
+        </app-ui-number>
+        <span>от 1 до 10</span>
+      </div>
+    </div>
+  </form>
+  <div class="action">
+    <div class="action-left">
+      <app-ui-button
+        *ngIf="isEdit"
+        [typeBtn]="'btn-danger'"
+        [textBtn]="'Удалить'">
+      </app-ui-button>
+    </div>
+    <div class="action-right">
+      <app-ui-button
+        class="mr-10"
+        [typeBtn]="'btn-light'"
+        [textBtn]="'Сохранить'"
+        (click)="save()"
+        [disabled]="!bulletinForm.valid">
+      </app-ui-button>
+      <app-ui-button
+        (click)="close()"
+        [typeBtn]="'btn-light'"
+        [textBtn]="'Отменить'">
+      </app-ui-button>
+    </div>
+  </div>
+</app-modal-window>
+
+

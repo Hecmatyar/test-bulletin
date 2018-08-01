@@ -1,0 +1,27 @@
+<div class="container">
+  <!--[(ngModel)]="filter" -->
+  <app-control-table
+    (onUpdate)="update($event)"
+    (onOpenEdit)="openEditWindow($event)"
+    [users]="users"
+    [filter]="filter"
+    (update)="update($event)">
+  </app-control-table>
+
+  <app-bulletin-table #table
+    [filter]="filter"
+    [bulletins]="bulletins"
+    (onEdit)="editBulletin($event)"
+    (onOpenEdit)="openEditWindow($event)">
+  </app-bulletin-table>
+
+  <div class="pagination" *ngIf="bulletins.length > filter.perPage">
+    <app-ui-pagination
+      [totalItems]="bulletins.length"
+      [itemsPerPage]="filter.perPage">
+    </app-ui-pagination>
+  </div>
+
+  <app-edit-bulletin #editBulletin [users]="users"></app-edit-bulletin>
+</div>
+
