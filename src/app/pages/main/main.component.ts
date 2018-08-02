@@ -4,6 +4,7 @@ import {Filter} from '../../entities/filter';
 import {BulletinService} from '../../services/bulletin.service';
 import {Bulletin} from '../../entities/bulletin';
 import {User} from '../../entities/user';
+import {SortParamDto} from "../../entities/sortParamDto";
 
 @Component({
   selector: 'app-main',
@@ -25,12 +26,18 @@ export class MainComponent implements OnInit {
       new User({id: '22345200-abe8-4f60-90c8-1d43c5f6c0f6', name: 'Иванович' }),
       new User({id: '27345200-abe8-4f60-90c8-0d43c5f6c0f6', name: 'Федорович' })];
   }
+  changeTableSort(data: any) {
+    // var sort = this.filter.sortParams.find(item => item.fieldName === data.fieldName);
+    // if(sort) sort.isDesc = data.isDesc;
+    // else this.filter.sortParams.push(new SortParamDto(data.fieldName, data.isDesc));
+    // this.update(this.filter);
+  }
   update(event) {
     console.log('filter', event);
     // заново загрузить все данные с фильтром
   }
   getBulletins() {
-    const result = this.bulletinService.getBulletins(this.filter);
+    this.bulletinService.getBulletins(this.filter).subscribe(data => {console.log(data); });
   }
   getUsers() {
 

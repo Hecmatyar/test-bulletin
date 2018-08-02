@@ -6,10 +6,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 import {Filter} from '../entities/filter';
 
 const httpOptions = {
-  headers: new HttpHeaders()
+  headers: new HttpHeaders({'Content-Type': 'application/json', 'Accept': 'application/json'})
 };
-httpOptions.headers.append('Content-Type', 'application/json');
-httpOptions.headers.append('Accept', 'application/json');
+// httpOptions.headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
 @Injectable({ providedIn: 'root' })
 export class BulletinService {
@@ -17,14 +16,16 @@ export class BulletinService {
   private bulletins: Bulletin[] = [];
 
   private asyncResult: any;
-  private bulletinsUrl = '/api/Bulletin/GetByFilters';
+  private bulletinsUrl = 'http://ci2.dextechnology.com:8000/api/Bulletin/GetByFilters';
 
-  getBulletins (filter: Filter): Observable<Bulletin[]> {
-    this.http.post<any>(this.bulletinsUrl, filter, httpOptions).toPromise()
-    // return this.asyncResult.then(a => { console.log(a); });
-      .then((data: any) => {
-        console.log('promise data', data);
-        return data.bulletins;
-      }).catch((data: any ) => {console.log('error', data); });
+  // async getBulletins (filter: Filter): Promise<Bulletin[]> {
+  //   const asyncResponse = await this.http.post<any>(this.bulletinsUrl, filter, httpOptions);
+  //   // return this.asyncResponse;
+  // }
+
+  getBulletins (filter: Filter): Observable<any> {
+    return this.http.post<any>(this.bulletinsUrl, filter, httpOptions).pipe(
+      tap(_ => console.log('data', _))
+    );
   }
 }

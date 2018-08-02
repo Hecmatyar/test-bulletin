@@ -12,7 +12,8 @@
     [filter]="filter"
     [bulletins]="bulletins"
     (onEdit)="editBulletin($event)"
-    (onOpenEdit)="openEditWindow($event)">
+    (onOpenEdit)="openEditWindow($event)"
+    (onChangeSort)="changeTableSort($event)">
   </app-bulletin-table>
 
   <div class="pagination" *ngIf="bulletins.length > filter.perPage">
