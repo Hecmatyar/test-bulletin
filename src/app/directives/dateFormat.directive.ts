@@ -13,12 +13,12 @@ export class DateFormatDirective implements OnInit {
   };
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
-    this.setFormattedDate();
+    this.setFormatedDate();
   }
-  getFormattedDate() {
+  getFormatedDate() {
     return new Date(this.dateFormat).toLocaleDateString('ru-ru', this.optionsYear);
   }
-  setFormattedDate() {
-    this.renderer.setProperty(this.el.nativeElement, 'innerHTML', this.getFormattedDate());
+  setFormatedDate() {
+    this.renderer.setProperty(this.el.nativeElement, 'innerHTML', this.getFormatedDate());
   }
 }
