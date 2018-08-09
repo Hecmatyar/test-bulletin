@@ -28,8 +28,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { BulletinService } from './services/bulletin.service';
-import { UserService } from './services/user.service';
+import { BulletinService } from './services/Bulletin.service';
+import { UserService } from './services/User.service';
+import {DeprApiRequest} from './services/depr.service';
+
 
 @NgModule({
   declarations: [
@@ -58,9 +60,9 @@ import { UserService } from './services/user.service';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [BulletinService, UserService],
+  providers: [BulletinService, UserService, DeprApiRequest],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

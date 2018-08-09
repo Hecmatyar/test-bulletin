@@ -3,12 +3,7 @@ var proxyConfig = [{
   context: '/api',
   target: 'http://ci2.dextechnology.com:8000',
   secure: false
-},
-  {
-    context: '/api/Bulletin/GetByFilters',
-    target: 'http://ci2.dextechnology.com:8000/api/Bulletin/GetByFilters',
-    secure: false
-  }];
+}];
 
 function setupForCorporateProxy(proxyConfig) {
   var proxyServer = process.env.http_proxy || process.env.HTTP_PROXY;

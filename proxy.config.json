@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://ci2.dextechnology.com:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

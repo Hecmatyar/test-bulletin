@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {EditBulletinComponent} from '../../components/edit-bulletin/edit-bulletin.component';
 import {Filter} from '../../entities/filter';
-import {BulletinService} from '../../services/bulletin.service';
+import {BulletinService} from '../../services/Bulletin.service';
 import {Bulletin} from '../../entities/bulletin';
 import {User} from '../../entities/user';
-import {SortParamDto} from "../../entities/sortParamDto";
+import {SortParamDto} from '../../entities/sortParamDto';
+import {DeprApiRequest} from '../../services/depr.service';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +14,7 @@ import {SortParamDto} from "../../entities/sortParamDto";
 })
 export class MainComponent implements OnInit {
   @ViewChild('editBulletin') private editBulletin: EditBulletinComponent;
-  constructor( private bulletinService: BulletinService ) {}
+  constructor( private bulletinService: BulletinService, private deprService: DeprApiRequest ) {}
   filter: Filter = new Filter;
   bulletins: Bulletin[] = [];
   users: User[] = [];

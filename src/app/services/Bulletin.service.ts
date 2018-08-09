@@ -16,7 +16,8 @@ export class BulletinService {
   private bulletins: Bulletin[] = [];
 
   private asyncResult: any;
-  private bulletinsUrl = 'http://ci2.dextechnology.com:8000/api/Bulletin/GetByFilters';
+  private bulletinsUrl = '/api/Bulletin/GetByFilters';
+  private u = '/api/Bulletin/GetByFilters';
 
   // async getBulletins (filter: Filter): Promise<Bulletin[]> {
   //   const asyncResponse = await this.http.post<any>(this.bulletinsUrl, filter, httpOptions);
