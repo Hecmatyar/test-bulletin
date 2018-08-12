@@ -1,0 +1,12 @@
+<div class="header-filter" (click)="setDesc()">
+  <div
+    class="filter-icon"
+    [ngClass]="{'active': useFilter}"
+    (click)="openFilterWindow($event)">
+  </div>
+  <div class="filter-text">{{text}}</div>
+  <div class="filter-sort">
+    <div class="sort-asc" [ngClass]="{'active': !isDesc}"></div>
+    <div class="sort-desc" [ngClass]="{'active': isDesc}"></div>
+  </div>
+</div>

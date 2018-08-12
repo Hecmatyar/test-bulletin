@@ -1,0 +1,20 @@
+.item{
+  display: flex;
+  padding:4px 0 4px 16px;
+  color: #ccc;
+  cursor: pointer;
+  &:hover{
+    //background-color: darken(#555, 5%);
+    color: #fff;
+  }
+  &.menu-border-bottom{
+    border-bottom: 1px solid #444;
+  }
+  &.active{
+    color: #fff;
+    &:before{
+      content: '';
+    }
+  }
+}
+

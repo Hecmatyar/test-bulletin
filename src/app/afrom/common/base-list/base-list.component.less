@@ -1,0 +1,46 @@
+.base-list{
+  h3{
+    padding-bottom: 10px;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    .left-action, .right-action, show-items{
+      display: flex;
+      align-items: center;
+    }
+  }
+  .list{
+    padding: 10px 0;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .mapping{
+    & > button:first-child {
+      margin-right: 10px;
+    }
+  }
+  button{
+    padding: 2px 15px;
+    border: 1px solid #888;
+    cursor: pointer;
+  }
+  .btn-red{
+    background-color: #ba1f15;
+    color: #ffffff;
+    &:hover{
+      background-color: darken(#ba1f15, 10%);
+    }
+  }
+  .btn-filter{
+    color: #444;
+    background-color: #ccc;
+    margin: 0 20px 0 10px;
+    &:hover{
+      background-color: darken(#ccc, 10%);
+    }
+  }
+}

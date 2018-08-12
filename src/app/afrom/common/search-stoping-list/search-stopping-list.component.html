@@ -1,0 +1,14 @@
+<div class="stopping-list">
+  <app-search-stopping-item
+    *ngFor="let item of counter; index as i"
+    [id]="'27834'"
+    [index]="i"
+    [name]="'Варшавская остановка'"
+    [description]="'Жута ловка, второй район, третий подъезд'"
+    (selectStopping)="selectStopping($event)">
+  </app-search-stopping-item>
+  <div class="add-new">
+    <div class="add">+</div>
+    <span>Добавить вручную</span>
+  </div>
+</div>

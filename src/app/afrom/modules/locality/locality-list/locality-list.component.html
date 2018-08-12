@@ -1,0 +1,49 @@
+<app-base-list [title]="'Населенные пункты'"
+  (addItem)="addItem()"
+  (changeItemsPerPage)="changeItemsPerPage($event)"
+  (clearFiler)="clearFilter()"
+  (toggleColumnVisible)="toggleColumnVisible()">
+
+
+  <div class="table">
+    <table>
+      <tr>
+        <th><app-header-filter [text]="'ID'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Название'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Тип'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Страна'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Администрация подчинения'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Авиакод(IATA)'"></app-header-filter></th>
+        <th><app-header-filter [text]="'КПП'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Население'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Площадь'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Широта'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Долгота'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Остановки'"></app-header-filter></th>
+        <th><app-header-filter [text]="'Смаплено'"></app-header-filter></th>
+        <th>Действия</th>
+      </tr>
+      <tr *ngFor="let item of counter">
+        <td>23872346</td>
+        <td>Жута ловка (zuta lovka)</td>
+        <td>город</td>
+        <td>Хорватия</td>
+        <td>Жутто-Лепичукац область</td>
+        <td>ZAG</td>
+        <td>да</td>
+        <td>23800</td>
+        <td>23км <sup>2</sup></td>
+        <td>23.324433</td>
+        <td>77.993873</td>
+        <td class="center">(8)</td>
+        <td class="center">(12)</td>
+        <td class="v-center">
+          <div class="action">
+            <div class="remove"></div>
+            <div class="edit"></div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</app-base-list>

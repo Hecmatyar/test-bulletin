@@ -1,0 +1,53 @@
+.search-stopping-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 8px;
+  border: 1px solid #999999;
+  margin-bottom: 8px;
+  .left-part{
+    display: flex;
+    align-items: center;
+  }
+  .index{
+    border-radius: 50%;
+    background-color: #ffcd42;
+    color: #333;
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    display: flex;
+    margin-right: 10px;
+    border: 1px solid #666;
+    span{
+      margin: auto;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .info{
+    .name{
+      font-weight: 500;
+      line-height: 14px;
+    }
+    .description{
+      font-size: 13px;
+      color: #666;
+      line-height: 14px;
+    }
+  }
+  button{
+    padding: 2px 15px;
+    border: 1px solid #888;
+    cursor: pointer;
+  }
+  .btn-red{
+    background-color: #ba1f15;
+    color: #ffffff;
+    &:hover{
+      background-color: darken(#ba1f15, 10%);
+    }
+  }
+}

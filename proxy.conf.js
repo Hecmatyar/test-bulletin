@@ -1,6 +1,6 @@
 var HttpsProxyAgent = require('https-proxy-agent');
 var proxyConfig = [{
-  context: '/api',
+  context: '/apiserver',
   target: 'http://ci2.dextechnology.com:8000',
   secure: false
 }];

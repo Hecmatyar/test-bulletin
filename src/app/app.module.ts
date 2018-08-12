@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { DashboardModule } from './afrom/modules/dashboard/dashboard.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 
@@ -37,6 +37,7 @@ import {DeprApiRequest} from './services/depr.service';
   declarations: [
     AppComponent,
     MainComponent,
+
     UiButtonComponent,
     UiDatepickerComponent,
     UiInputComponent,
@@ -54,7 +55,9 @@ import {DeprApiRequest} from './services/depr.service';
   ],
   imports: [
     BrowserModule,
+    DashboardModule,
     AppRoutingModule,
+
     BsDatepickerModule.forRoot(),
     PaginationModule.forRoot(),
     ModalModule.forRoot(),

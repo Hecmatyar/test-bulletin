@@ -1,0 +1,31 @@
+<div class="dash-container">
+  <app-dashboard-menu>
+    <app-dashboard-menu-item [border]="true">
+      <div class="profile">
+        <div class="avatar"></div>
+        <span>Мой профиль</span>
+      </div>
+
+    </app-dashboard-menu-item>
+    <app-dashboard-menu-item>
+      <span>Населенные пункты</span>
+    </app-dashboard-menu-item>
+    <app-dashboard-menu-item>
+      <span>Остановки</span>
+    </app-dashboard-menu-item>
+    <app-dashboard-menu-item>
+      <span>Маппинг</span>
+    </app-dashboard-menu-item>
+  </app-dashboard-menu>
+
+  <div class="content">
+    <div class="range-line"></div>
+    <div class="main">
+      <router-outlet>
+        <!--<app-locality-list></app-locality-list>-->
+        <app-locality-addition></app-locality-addition>
+      </router-outlet>
+    </div>
+  </div>
+</div>
+

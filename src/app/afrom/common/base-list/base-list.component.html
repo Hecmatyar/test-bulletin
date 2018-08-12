@@ -1,0 +1,53 @@
+<div class="base-list">
+  <h3>{{title}}</h3>
+  <div class="header">
+    <div class="left-action">
+      <button
+        class="btn-red"
+        (click)="addItemList()">
+        Добавить
+      </button>
+    </div>
+    <div class="right-action">
+      <button
+        class="btn-red"
+        (click)="clearFilterList()">
+        Очистить фильтры
+      </button>
+      <button
+        class="btn-filter"
+        (click)="toggleColumnVisibleList()">
+        Показать / скрыть колонки
+      </button>
+      <div class="show-items">
+        Показать
+        <select
+          (change)="changeItemsPerPageList($event.target.value)">
+          <option *ngFor="let item of itemsPerPage" value="{{item}}">
+            {{item}}
+          </option>
+        </select>
+         строк
+      </div>
+
+    </div>
+  </div>
+  <div class="list">
+    <ng-content></ng-content>
+  </div>
+  <div class="mapping" *ngIf="isMapping">
+    <button
+      class="btn-red"
+      (click)="mappingSelected()">
+      Смапить выбранные
+    </button>
+    <button
+      class="btn-red"
+      (click)="markAsImpossible()">
+      Поставить отметку "невозможно смапить"
+    </button>
+  </div>
+  <div class="pagination">
+    <app-pagination></app-pagination>
+  </div>
+</div>
