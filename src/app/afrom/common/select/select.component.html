@@ -1,0 +1,6 @@
+<select
+  (change)="change($event.target.value)">
+  <option *ngFor="let item of items" value="{{item.key}}">
+    {{item.value}}
+  </option>
+</select>

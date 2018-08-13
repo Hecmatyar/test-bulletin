@@ -1,6 +1,6 @@
 .stopping-list{
   padding: 10px;
-  background-color: #cccccc;
+  background-color: #ececec;
   border: 1px solid #999;
   min-height: 100%;
   .add-new{
@@ -10,6 +10,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    &:hover{
+      background-color: #f4f4f4;
+    }
+    span{
+      font-weight: 700;
+    }
     .add{
       border-radius: 50%;
       background-color: #aaa;
@@ -17,11 +24,12 @@
       width: 30px;
       height: 30px;
       display: flex;
-      align-items: center;
-      justify-content: center;
       cursor: pointer;
-      &:hover{
-        background-color: darken(#aaaaaa, 10%);
+      .plus{
+        margin: auto;
+        background: url(../../assets/img/plus-symbol.svg);
+        height: 12px;
+        width: 12px;
       }
     }
   }

@@ -1,10 +1,11 @@
+<h4>Добавление населенного пункта</h4>
 <div class="locality-addition">
   <div class="content">
     <div class="search">
       <div class="name">Название</div>
       <div class="search-stopping">
-        <input type="text" class="search-stopping">
-        <button class="btn-red">Найти</button>
+        <app-auto-complete class="search-component"></app-auto-complete>
+        <app-button [text]="'Найти'"></app-button>
       </div>
     </div>
     <div class="search-result">
@@ -14,5 +15,4 @@
   <div class="map">
     <app-map></app-map>
   </div>
-
 </div>

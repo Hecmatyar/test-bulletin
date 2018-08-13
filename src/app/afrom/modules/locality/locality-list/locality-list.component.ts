@@ -3,11 +3,11 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-locality-list',
   templateUrl: 'locality-list.component.html',
-  styleUrls: ['locality-list.component.less']
+  styleUrls: ['locality-list.component.less', '../../../assets/scss/table.scss']
 })
 
 export class LocalityListComponent implements OnInit {
-  counter: Array<number> = new Array(10);
+  counter: Array<number> = new Array(12);
   constructor() {
   }
 

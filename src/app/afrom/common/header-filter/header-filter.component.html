@@ -1,8 +1,9 @@
 <div class="header-filter" (click)="setDesc()">
-  <div
-    class="filter-icon"
-    [ngClass]="{'active': useFilter}"
-    (click)="openFilterWindow($event)">
+  <div class="filter-icon">
+    <i class="fa fa-filter"
+       [ngClass]="{'active': useFilter}"
+       (click)="openFilterWindow($event)">
+    </i>
   </div>
   <div class="filter-text">{{text}}</div>
   <div class="filter-sort">

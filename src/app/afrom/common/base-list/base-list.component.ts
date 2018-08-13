@@ -8,7 +8,7 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 export class BaseListComponent implements OnInit {
   @Input() title: string;
-  @Input() isMapping = false;
+  @Input() isMapping = true;
   @Output() addItem = new EventEmitter<any>();
   @Output() changeItemsPerPage = new EventEmitter<any>();
   @Output() clearFiler = new EventEmitter<any>();

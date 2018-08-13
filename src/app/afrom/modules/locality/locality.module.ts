@@ -12,9 +12,14 @@ import {HeaderFilterComponent} from '../../common/header-filter/header-filter.co
 import {SearchStoppingListComponent} from '../../common/search-stoping-list/search-stopping-list.component';
 import {SearchStoppingItemComponent} from '../../common/search-stopping-item/search-stopping-item.component';
 import {MapComponent} from '../../common/map/map.component';
+import {ButtonComponent} from '../../common/button/button.component';
+import {AutoCompleteComponent} from '../../common/autocomplete/auto-complete.component';
+import {LocalityComponent} from './locality/locality.component';
+import {SelectComponent} from '../../common/select/select.component';
 
 @NgModule({
   declarations: [
+    LocalityComponent,
     LocalityListComponent,
     LocalityAdditionComponent,
     BaseListComponent,
@@ -23,6 +28,9 @@ import {MapComponent} from '../../common/map/map.component';
     SearchStoppingListComponent,
     SearchStoppingItemComponent,
     MapComponent,
+    ButtonComponent,
+    AutoCompleteComponent,
+    SelectComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +38,7 @@ import {MapComponent} from '../../common/map/map.component';
     PaginationModule.forRoot(),
   ],
   exports: [
+    LocalityComponent,
     LocalityListComponent,
     LocalityAdditionComponent,
   ],

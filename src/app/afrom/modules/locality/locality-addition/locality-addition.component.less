@@ -1,6 +1,7 @@
 .locality-addition{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
   .content{
     display: flex;
     flex-direction: column;
@@ -8,10 +9,14 @@
     .search{
       padding-bottom: 14px;
       flex: 0 0 auto;
+      .name{
+        font-weight: 500;
+        color: #000;
+      }
       .search-stopping{
         display: flex;
         align-items: center;
-        input{
+        .search-component{
           margin-right: 20px;
           width: 300px;
         }
@@ -21,22 +26,6 @@
       flex-grow: 1;
       overflow: auto;
       height: 100%;
-    }
-  }
-  .map{
-
-  }
-
-  button{
-    padding: 2px 15px;
-    border: 1px solid #888;
-    cursor: pointer;
-  }
-  .btn-red{
-    background-color: #ba1f15;
-    color: #ffffff;
-    &:hover{
-      background-color: darken(#ba1f15, 10%);
     }
   }
 }
